@@ -29,10 +29,10 @@ function addDelay(num) {
   }, num * 1000);
 }
 
-drawBars(bars);
-
 let i = 0;
 while (i < 100000) {
   addDelay(i);
   i++;
 }
+
+drawBars(bars);
