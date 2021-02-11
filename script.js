@@ -1,5 +1,5 @@
 "use strict";
-//make array with length of 40 and random nr
+//make array with length of 40 with values of random nr.
 let bars = Array.from({ length: 40 }, () => Math.floor(Math.random() * 32));
 
 function drawBars(bars) {
