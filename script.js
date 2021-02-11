@@ -1,31 +1,39 @@
 "use strict";
-//make array with length of 40
+//make array with length of 40 and random nr
 let bars = Array.from({ length: 40 }, () => Math.floor(Math.random() * 32));
 
-let barChart = [];
-let i = 0;
-
-function createBars(bars) {
-  for (i = 0; i < bars.length; i++) {
+function drawBars(bars) {
+  for (let i = 0; i < bars.length; i++) {
     const bar = document.createElement("div");
     bar.style.height = bars[i] + "vw";
     document.querySelector("#chart").append(bar);
   }
-  addBars(bars);
-  loopBreak(num);
 }
 
-function addBars(bars) {
-  console.log(bars);
-  barChart.shift(bars);
-  barChart.push(bars);
+function removeFirstBar() {
+  let element = document.querySelector("#chart");
+  element.removeChild(element.firstChild);
 }
 
-function loopBreak(num) {
+function addNewBar() {
+  removeFirstBar();
+  const newBar = Math.floor(Math.random() * 32);
+  const bar = document.createElement("div");
+  bar.style.height = newBar + "vw";
+  document.querySelector("#chart").append(bar);
+}
+
+function addDelay(num) {
   setTimeout(function () {
-    //doStuff
-    // barChart.push(bars[num]);
-    console.log(barChart);
+    addNewBar();
   }, num * 1000);
 }
-createBars(bars);
+
+drawBars(bars);
+
+let i = 0;
+while (i < 100000) {
+  // addNewBar();
+  addDelay(i);
+  i++;
+}
