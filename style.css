@@ -6,12 +6,12 @@
   display: flex;
   width: 90%;
   align-items: flex-end;
-  margin: 5rem auto;
+  margin: 200px auto;
 }
 
 #chart div {
   background-color: rgb(14, 17, 224);
   margin: 0.5px;
-  width: 300px;
+  width: 350px;
   align-items: center;
 }
