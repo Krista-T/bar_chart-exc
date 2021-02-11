@@ -10,17 +10,17 @@ function drawBars(bars) {
   }
 }
 
-function removeFirstBar() {
-  let element = document.querySelector("#chart");
-  element.removeChild(element.firstChild);
-}
-
 function addNewBar() {
-  removeFirstBar();
   const newBar = Math.floor(Math.random() * 32);
   const bar = document.createElement("div");
   bar.style.height = newBar + "vw";
   document.querySelector("#chart").append(bar);
+  removeFirstBar();
+}
+
+function removeFirstBar() {
+  let element = document.querySelector("#chart");
+  element.removeChild(element.firstChild);
 }
 
 function addDelay(num) {
